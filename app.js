@@ -4,6 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const squares = document.querySelectorAll('.grid div');
     const result = document.querySelector('#result');
     const displayCurrentPlayer = document.querySelector('#current-player');
+    const playerColor = document.querySelector('#player-color');
     let currentPlayer = 1;
     let gameOver = false;
 
@@ -21,12 +22,18 @@ document.addEventListener('DOMContentLoaded', () => {
                             //change current player
                             currentPlayer = 2;
                             displayCurrentPlayer.innerHTML = currentPlayer;
+                            //change the color of the text of the player
+                            playerColor.classList.remove('player-one-color');
+                            playerColor.classList.add('player-two-color');
                         } else if (currentPlayer === 2) {
                             squares[index].classList.add('taken');
                             squares[index].classList.add('player-two');
                             //change current Player
                             currentPlayer = 1;
                             displayCurrentPlayer.innerHTML = currentPlayer;
+                            //change the color of the text of the player
+                            playerColor.classList.remove('player-two-color');
+                            playerColor.classList.add('player-one-color');
                         }
                     //if the square below your current square is not taken, you can't go there
                     } else alert('cant go there');
@@ -62,6 +69,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     square4.classList.contains('player-one')) {
                         //if they do, player-one is passed as the winner
                         result.innerHTML = 'Player One Wins!';
+                        result.classList.add('player-one-color');
                         gameOver = true;
                 }
                 //now check those arrays to see if they all have the class of player-two
@@ -71,6 +79,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 square4.classList.contains('player-two')) {
                     //if they do, player-two is passed as the winner
                     result.innerHTML = 'Player Two Wins!';
+                    result.classList.add('player-two-color');
                     gameOver = true;
                 }
             }

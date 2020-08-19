@@ -58,7 +58,9 @@ h2 {
     margin-top: 75px;
 }
 /* do not edit above */
-
+/* h3 {
+    color: red;
+} */
 .grid {
     margin: 10px 0 0 20px;
     border: 1px solid black;
@@ -86,4 +88,12 @@ h2 {
 
 .bottom {
     border: none !important;
+}
+
+.player-one-color {
+    color: red;
+}
+
+.player-two-color {
+    color: blue;
 }
