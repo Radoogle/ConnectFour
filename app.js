@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let gameOver = false;
 
 
-    for (var i = 0, len = squares.length; i < len; i++) 
+    for (var i = 0, len = squares.length - 7; i < len; i++) 
         (function(index) {
             //add an onclick to each square in your grid
             squares[index].onclick = function() {

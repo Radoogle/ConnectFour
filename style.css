@@ -65,7 +65,7 @@ h2 {
 /* do not edit above */
 
 .grid {
-    margin: 10px 0 0 20px;
+    margin: 50px auto;
     border: 1px solid black;
     display: flex;
     flex-wrap: wrap;
@@ -100,4 +100,9 @@ h2 {
 
 .player-two-color {
     color: blue;
+}
+
+#result {
+    text-align: center;
+    font-size: 2em;
 }
