@@ -1,3 +1,8 @@
+:root {
+    --cell-width: 80px;
+    --cell-height: 80px; 
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -58,32 +63,31 @@ h2 {
     margin-top: 75px;
 }
 /* do not edit above */
-/* h3 {
-    color: red;
-} */
+
 .grid {
     margin: 10px 0 0 20px;
     border: 1px solid black;
     display: flex;
     flex-wrap: wrap;
-    height: 132px;
-    width: 154px;
+    height: calc((var(--cell-height) * 6) + 12px);
+    width: calc((var(--cell-width) * 7) + 14px);
 }
 
 .grid div {
-    height: 20px;
-    width: 20px;
+    height: var(--cell-height);
+    width: var(--cell-width);
     border: 1px solid black;
 }
 
+.player-one, .player-two {
+    border-radius: 50%;
+}
 .player-one {
     background-color: red;
-    border-radius: 10px;
 }
 
 .player-two {
     background-color: blue;
-    border-radius: 10px;
 }
 
 .bottom {
