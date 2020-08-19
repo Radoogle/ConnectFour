@@ -54,13 +54,36 @@ footer {
     padding: 0 35px 0 35px;
 }
 
+h2 {
+    margin-top: 75px;
+}
 /* do not edit above */
 
 .grid {
-    border: 1px solid;
+    margin: 10px 0 0 20px;
+    border: 1px solid black;
     display: flex;
     flex-wrap: wrap;
-    height: 120px;
-    width: 140px;
+    height: 132px;
+    width: 154px;
 }
 
+.grid div {
+    height: 20px;
+    width: 20px;
+    border: 1px solid black;
+}
+
+.player-one {
+    background-color: red;
+    border-radius: 10px;
+}
+
+.player-two {
+    background-color: blue;
+    border-radius: 10px;
+}
+
+.bottom {
+    border: none !important;
+}
