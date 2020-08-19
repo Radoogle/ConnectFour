@@ -5,14 +5,15 @@ document.addEventListener('DOMContentLoaded', () => {
     const result = document.querySelector('#result');
     const displayCurrentPlayer = document.querySelector('#current-player');
     let currentPlayer = 1;
-    const info = document.querySelector('.info');
+    let gameOver = false;
+
 
     for (var i = 0, len = squares.length; i < len; i++) 
         (function(index) {
             //add an onclick to each square in your grid
             squares[index].onclick = function() {
                 //if the square below your current square is taken, you can go ontop of it
-                if(!squares[index].classList.contains('taken'))
+                if(!squares[index].classList.contains('taken') && !gameOver)
                     if(squares[index + 7].classList.contains('taken')) {
                         if (currentPlayer === 1) {
                             squares[index].classList.add('taken');
@@ -32,7 +33,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         })(i);
 
-        //check the board for a win r lose
+        //check the board for a win or lose
         function checkBoard() {
             //make const that shows all winning Arrays
             const winningArrays = [
@@ -61,6 +62,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     square4.classList.contains('player-one')) {
                         //if they do, player-one is passed as the winner
                         result.innerHTML = 'Player One Wins!';
+                        gameOver = true;
                 }
                 //now check those arrays to see if they all have the class of player-two
                 else if (square1.classList.contains('player-two') && 
@@ -69,6 +71,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 square4.classList.contains('player-two')) {
                     //if they do, player-two is passed as the winner
                     result.innerHTML = 'Player Two Wins!';
+                    gameOver = true;
                 }
             }
         }
