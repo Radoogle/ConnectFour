@@ -5,6 +5,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const result = document.querySelector('#result');
     const displayCurrentPlayer = document.querySelector('#current-player');
     const playerColor = document.querySelector('#player-color');
+    const restartButton = document.querySelector('#restart');
     let currentPlayer = 1;
     let gameOver = false;
 
@@ -82,10 +83,16 @@ document.addEventListener('DOMContentLoaded', () => {
                     result.classList.add('player-two-color');
                     gameOver = true;
                 }
+                if(gameOver) {
+                    restartButton.style.visibility = "visible";
+                } else restartButton.style.visibility = "hidden";
             }
         }
 
         //add an eventListener to each square that will trigger the checkBoard function on click
-        squares.forEach(square => square.addEventListener('click', checkBoard)); 
+        squares.forEach(square => square.addEventListener('click', checkBoard));
+        restartButton.onclick = () => {
+            location.reload();
+        };
 });
 
